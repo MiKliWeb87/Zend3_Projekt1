@@ -1,0 +1,65 @@
+<?php
+// module/Register/view/register/register/edit.phtml:
+
+$title = 'Edit register';
+$this->headTitle($title);
+?>
+<h1><?= $this->escapeHtml($title) ?></h1>
+<?php
+$firstname = $form->get('firstname');
+$firstname->setAttribute('class', 'form-control');
+$firstname->setAttribute('placeholder', 'Register firstname');
+
+$lastname = $form->get('lastname');
+$lastname->setAttribute('class', 'form-control');
+$lastname->setAttribute('placeholder', 'Register lastname');
+
+$email = $form->get('email');
+$email->setAttribute('class', 'form-control');
+$email->setAttribute('placeholder', 'Email');
+//Land eingefügt
+$password = $form->get('password');
+$password->setAttribute('class', 'form-control');
+$password->setAttribute('placeholder', 'Passwort');
+
+$submit = $form->get('submit');
+$submit->setAttribute('class', 'btn btn-primary');
+
+$form->setAttribute('action', $this->url('register', [
+    'action' => 'edit',
+    'id'     => $id,
+]));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+?>
+<div class="form-group">
+    <?= $this->formLabel($firstname) ?>
+    <?= $this->formElement($firstname) ?>
+    <?= $this->formElementErrors()->render($firstname, ['class' => 'help-block']) ?>
+</div>
+
+<div class="form-group">
+    <?= $this->formLabel($lastname) ?>
+    <?= $this->formElement($lastname) ?>
+    <?= $this->formElementErrors()->render($lastname, ['class' => 'help-block']) ?>
+</div>
+
+<div class="form-group">
+    <?= $this->formLabel($email) ?>
+    <?= $this->formElement($email) ?>
+    <?= $this->formElementErrors()->render($email, ['class' => 'help-block']) ?>
+</div>
+
+<!--eingefügt -->
+<div class="form-group">
+    <?= $this->formLabel($password) ?>
+    <?= $this->formElement($password) ?>
+    <?= $this->formElementErrors()->render($password, ['class' => 'help-block']) ?>
+</div>
+
+<?php
+echo $this->formSubmit($submit);
+echo $this->formHidden($form->get('id'));
+echo $this->form()->closeTag();
+?>

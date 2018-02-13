@@ -1,0 +1,47 @@
+<?php
+// module/Register/view/register/register/index.phtml:
+
+$title = $this->translate('application_register_title');
+$this->headTitle($title);
+?>
+<h1><?= $this->escapeHtml($title) ?></h1>
+<p>
+    <a href="<?= $this->url('register', ['action' => 'add']) ?>"><?= $this->translate('application_user_new') ?></a>
+</p>
+
+<table class="table">
+<tr>
+    <th><?= $this->translate('application_user_firstname')?></th>
+    <th><?= $this->translate('application_user_lastname')?></th>
+	<th>EMail</th> <!-- eingefügt -->
+	<!-- <th>< ?= $this->translate('application_user_password')?></th> <!-- eingefügt -->
+    <th>&nbsp;</th>
+</tr>
+ <?php foreach ($this->paginator as $register) : // <-- change here! ?>
+    <tr>
+        <td><?= $this->escapeHtml($register->firstname) ?></td>
+        <td><?= $this->escapeHtml($register->lastname) ?></td>
+		<td><?= $this->escapeHtml($register->email) ?></td>
+		<!--<td>< ?= $this->escapeHtml($register->password) ?></td> -->
+        <td>
+            <a href="<?= $this->url('register', ['action' => 'edit', 'id' => $register->id]) ?>"><?= $this->translate('application_user_edit') ?></a>
+            <a href="<?= $this->url('register', ['action' => 'delete', 'id' => $register->id]) ?>"><?= $this->translate('application_user_delete') ?></a>
+        </td>
+    </tr>
+<?php endforeach; ?>
+</table>
+
+<?php
+// In module/Register/view/register/register/index.phtml:
+// Add at the end of the file after the table:
+?>
+<?= $this->paginationControl(
+    // The paginator object:
+    $this->paginator,
+    // The scrolling style:
+    'sliding',
+    // The partial to use to render the control:
+    'partial/paginator',
+    // The route to link to when a user clicks a control link:
+    ['route' => 'register']
+) ?>

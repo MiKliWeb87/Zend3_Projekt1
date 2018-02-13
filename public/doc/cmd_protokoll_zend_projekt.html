@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<h2> cmd Protokoll Zend Projekt 1 </h2>
+<p>
+<ul>
+<li>Ordner zf3_mirco angelegt</li>
+<li>Daten aus ZendSkeletonApplication in Ordner kopiert(außer vendor) </li>
+</ul>
+</p>
+
+<h3> Verzeichnis wechseln</h3>
+<p>
+C:\devhost>cd zf3_mirco
+</p>
+<p>
+C:\devhost\zf3_mirco>composer install<br>
+
+  Please select which config file you wish to inject 'Zend\Hydrator' into:<br>
+  [0] Do not inject<br>
+  [1] config/modules.config.php<br>
+  [2] config/development.config.php.dist<br>
+  Make your selection (default is 0):1<br>
+<br>
+  Remember this option for other packages of the same type? (y/N)y<br>
+</p>
+<p>
+####Album, Book und Hallo Modul sind vorhanden. 
+Angelegt werden sollen: Registrierung, Galerie und Dokumentation
+</p>
+<ol>
+	<li>Als Datenbank Sqlite benutzt(zf3_mirco.db liegt in data) </li>
+	<li>In httpd-vhosts.conf(xampp/apache/conf/extra) den VirtualHost anlegen & in hosts(Windows/System32/drivers/etc) Datei host anlegen </li>
+	<li>Neues Modul anlegen: </li>
+		<ol type="a">
+			<li>Modul Ordner kopieren z.b. Book </li>
+			<li>Modul Ordner umbenennen in Register bzw. Dokumentation bzw. Galerie </li>
+			<li>Ordner systematisch durchgehen und Dateien/Ordner die den alten Namen enthalten entsprechend umbenennen </li>
+			<li>in der Composer.json in autoload das Modul registrieren </li>
+			<li> C:\devhost\zf3_mirco\config\modules.config.php => Modul registrieren => composer dump-autoload durchführen</li>
+			<li> In den einzelnen Dateien alle vorhandenen "Namen" des Moduls durch den neuen Namen ersetzen also aus Book => Register(beachte Groß/kleinschreibung) heißt {Galerie}Controller.php, {Galerie}Form.php und beide Model php Dateien
+			<li>in der Module.php wird die Constante definiert die in der module.config.php des neuen Moduls im "translator" Schlüssel benutzt wird </li>
+			<li>die Ordnerstruktur ist unter src => Controller => steuert View und Modell </li>
+			<li>Form => Formular falls man eines braucht </li>
+			<li>Model => {Book}.php => Hauptsächlich Filter für Inhalte zum Formular </li>
+			<li>Model => {Book}Table.php => anzeigen(get) und speichern(set) der Inhalte des Formulars von/in die DB </li>
+			<li>Controller => {Book}Controller.php => einzelnen Actions wie index|add|edit|deleteAction </li>
+			<li>view -> book -> book -> liegen die .phtml Dateien die anzeigen was gerade ausgeführt wird(add,edit,delete,index) </li>
+		</ol>
+	<li>Sprache hinzufügen: </li>
+		<ol>
+			<li>language Ordner für jedes Modul hinzufügen(direkt im Modul Ordner) </li>
+			<li> </li>
+			<li> </li>
+			<li> </li>
+			<li> </li>
+		</ol>
+</ol>
+
+
+
+		
+		
+
+</body>
+</html>
+
+
+
+

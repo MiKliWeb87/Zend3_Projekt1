@@ -1,0 +1,49 @@
+<?php
+// module/Galerie/view/galerie/galerie/index.phtml:
+
+$title = $this->translate('application_galerie_title');
+$this->headTitle($title);
+?>
+<h1><?= $this->escapeHtml($title) ?></h1>
+<p>
+   <!-- <a href="< ?= $this->url('galerie', ['action' => 'add'], true) ?>">< ?= $this->translate('application_galerie_new') ?></a> -->
+</p>
+
+<table class="table">
+<tr>
+    <th>Picname</th>
+   <!-- <th>Figcaption</th> -->
+	<th>Alttext</th> <!--eingefügt -->
+    <th>&nbsp;</th>
+</tr>
+ <?php foreach ($this->paginator as $galerie) : // <-- change here! ?>
+    <tr> <!--$this->galerie = Zugriff auf galerie Schlüssel im GalerieController -->
+        <td>
+			<figure><img class="galerie" src="<?= $this->galerie . $this->escapeHtml($galerie->picname) ?>">
+		   <figcaption> <?= $this->escapeHtml($galerie->figcaption) ?><figcaption>
+		   </figure>
+	   </td>
+		<td><?= $this->escapeHtml($galerie->alttext) ?></td>
+      
+	  <!--  <td>
+            <a href="< ?= $this->url('galerie', ['action' => 'edit', 'id' => $galerie->id], true) ?>">< ?= $this->translate('application_galerie_edit') ?></a>
+            <a href="< ?= $this->url('galerie', ['action' => 'delete', 'id' => $galerie->id], true) ?>">< ?= $this->translate('application_galerie_delete')?></a>
+        </td> -->
+    </tr>
+<?php endforeach; ?>
+</table>
+
+<?php
+// In module/Galerie/view/galerie/galerie/index.phtml:
+// Add at the end of the file after the table:
+?>
+<?= $this->paginationControl(
+    // The paginator object:
+    $this->paginator,
+    // The scrolling style:
+    'sliding',
+    // The partial to use to render the control:
+    'partial/paginator',
+    // The route to link to when a user clicks a control link:
+    ['route' => 'galerie']
+) ?>
