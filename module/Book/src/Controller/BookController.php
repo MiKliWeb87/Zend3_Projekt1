@@ -64,7 +64,8 @@ class BookController extends AbstractActionController
 
         $book->exchangeArray($form->getData());
         $this->table->saveBook($book);
-        return $this->redirect()->toRoute('book'); //$advert->getId() //wenn 3. Parameter true => routeMatch, Formular bleibt nach Eingabe angezeigt
+		return $this->redirect()->toRoute('book', ['action' => 'index'], true);
+        //return $this->redirect()->toRoute('book'); //$advert->getId() //wenn 3. Parameter true => routeMatch, Formular bleibt nach Eingabe angezeigt
     }
 
 
@@ -87,7 +88,7 @@ class BookController extends AbstractActionController
         } 
 		catch (\Exception $e) 
 		{
-            return $this->redirect()->toRoute('book', ['action' => 'index']);
+            return $this->redirect()->toRoute('book', ['action' => 'index'], true);
         }
 
         $form = new BookForm();
@@ -113,7 +114,7 @@ class BookController extends AbstractActionController
         $this->table->saveBook($book);
 
         // Redirect to book list
-        return $this->redirect()->toRoute('book', ['action' => 'index']);
+        return $this->redirect()->toRoute('book', ['action' => 'index'],true); //wichtig für Weiterleitung nach Drücken des "Add" Buttons auf die richtige Index mit der richtigen Sprache
     }
 
     public function deleteAction()
@@ -136,7 +137,8 @@ class BookController extends AbstractActionController
             }
 
             // Redirect to list of books
-            return $this->redirect()->toRoute('book');
+           // return $this->redirect()->toRoute('book');
+		   return $this->redirect()->toRoute('book', ['action' => 'index'], true);
         }
 
         return [

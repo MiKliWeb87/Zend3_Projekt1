@@ -23,7 +23,7 @@ return [
                     'constraints' => [
                         'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
                         'id'     => '[0-9]+',
-						'lang' => '(de|en|fr)',
+						'lang' => '(de|en)',
 						
                     ],
 					

@@ -6,7 +6,6 @@ use Zend\Router\Http\Segment;
 #use Zend\ServiceManager\Factory\InvokableFactory;
 use Zend\Navigation\Page\Mvc;
 use Zend\Mvc\I18n\Router;
-
 return [
 // And remove the entire "controllers" section here:
 /*    'controllers' => [
@@ -17,7 +16,6 @@ return [
 	
 // The following section is new and should be added to your file: //* = 0 oder mehr, + 1 oder mehr, ? = 0 oder 1
     'router' => [
-	'router_class' => Zend\Mvc\I18n\Router\TranslatorAwareTreeRouteStack::class, //<-- bringt irgendwie nichts 
         'routes' => [
             'book' => [
                 'type'    => Segment::class,
@@ -35,7 +33,7 @@ return [
 						'lang'       => 'de',
                     ],
                 ],
-		/*Versuch mit Child Routes 	*/
+		/*Versuch mit Child Routes 	
 			'may_terminate' => true, //kann auch ohne action aufgerufen werden
                 'child_routes'  => [
                     'add' => [
@@ -76,7 +74,7 @@ return [
                             ],
                         ],
                     ],
-                ],	 //Ende Child routes, kann wohl abgeschaltet werden	
+                ],	*/ //Ende Child routes, kann wohl abgeschaltet werden	
             ],
         ],
     ],

@@ -59,6 +59,15 @@ Angelegt werden sollen: Registrierung, Galerie und Dokumentation
 		</ol>
 </ol>
 
+<!--Navigation Teil aus module.config.php der Appli in die module.config.php des Moduls packen. 
+und=>
+use Zend\Navigation\Page\Mvc;
+use Zend\Mvc\I18n\Router;
+hinzufügen...
+#### bei allen .phtml Dateien die this-url() enthalten den dritten Parameter auf "true" setzen
+< ?= $this->url($this->route, [], ['query' => ['page' => $this->next]], true) ?>
+ -->
+
 
 
 		

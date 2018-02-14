@@ -176,7 +176,7 @@ return [
                 
             ],
 			
-			[
+		/*	[
                 'label' => 'Register',
                 'route' => 'register',
 				#'useRouteMatch' => true,
@@ -202,7 +202,7 @@ return [
                     ],
                 ],
                 
-            ],
+            ], */
 			
 			[
                 'label' => 'Dokumentation',

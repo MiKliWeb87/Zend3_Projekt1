@@ -4,6 +4,8 @@ namespace Register;
 use Zend\Router\Http\Segment;
 // Remove this:
 #use Zend\ServiceManager\Factory\InvokableFactory;
+use Zend\Navigation\Page\Mvc;
+use Zend\Mvc\I18n\Router;
 
 return [
 // And remove the entire "controllers" section here:
@@ -31,7 +33,58 @@ return [
 						'lang'		 => 'de',
                     ],
                 ],
+			'may_terminate' => true,
             ],
+        ],
+    ],
+	
+	'navigation'    => [
+        'default' => [
+            'register' => [
+                'type'          => Mvc::class,
+                'order'         => '300',
+                'label'         => 'Register',
+                'route'         => 'register',
+                'controller'    => Controller\RegisterController::class,
+                'action'        => 'index',
+                'useRouteMatch' => true,
+                'pages'         => [
+                    
+					[
+                        'label'  => 'Add',
+                        'route'  => 'register',
+                        'action' => 'add',
+						'useRouteMatch' => true,
+                    ],
+					[
+                        'label'  => 'Edit',
+                        'route'  => 'register',
+                        'action' => 'edit',
+						'useRouteMatch' => true,
+                    ],
+                    [
+                        'label'  => 'Delete',
+                        'route'  => 'register',
+                        'action' => 'delete',
+						'useRouteMatch' => true,
+                    ],
+					/*'add' => [
+                        'type'    => Mvc::class,
+                        'route'   => 'register/add',
+                        #'visible' => false,
+                    ],
+                    'edit' => [
+                        'type'    => Mvc::class,
+                        'route'   => 'register/edit',
+                        #'visible' => false,
+                    ],
+                    'delete' => [
+                        'type'    => Mvc::class,
+                        'route'   => 'register/delete',
+                        #'visible' => false,
+                    ],*/
+                ], 
+            ], 
         ],
     ],
 	
