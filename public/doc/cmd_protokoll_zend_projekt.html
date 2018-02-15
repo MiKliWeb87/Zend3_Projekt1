@@ -3,67 +3,164 @@
 <head>
 </head>
 <body>
-<h2> cmd Protokoll Zend Projekt 1 </h2>
-<p>
-<ul>
-<li>Ordner zf3_mirco angelegt</li>
-<li>Daten aus ZendSkeletonApplication in Ordner kopiert(außer vendor) </li>
-</ul>
-</p>
+	<h2> cmd Protokoll Zend Projekt 1 </h2>
+	<p>
+		<ul>
+			<li>Ordner zf3_mirco angelegt</li>
+			<li>Daten aus ZendSkeletonApplication in Ordner kopiert(außer vendor) </li>
+		</ul>
+	</p>
 
-<h3> Verzeichnis wechseln</h3>
-<p>
-C:\devhost>cd zf3_mirco
-</p>
-<p>
-C:\devhost\zf3_mirco>composer install<br>
+	<h3> Verzeichnis wechseln</h3>
+	<p>
+	C:\devhost><pre>cd zf3_mirco</pre>
+	</p>
+	<p>
+	C:\devhost\zf3_mirco><pre>composer install<br>
 
-  Please select which config file you wish to inject 'Zend\Hydrator' into:<br>
-  [0] Do not inject<br>
-  [1] config/modules.config.php<br>
-  [2] config/development.config.php.dist<br>
-  Make your selection (default is 0):1<br>
-<br>
-  Remember this option for other packages of the same type? (y/N)y<br>
-</p>
-<p>
-####Album, Book und Hallo Modul sind vorhanden. 
-Angelegt werden sollen: Registrierung, Galerie und Dokumentation
-</p>
-<ol>
-	<li>Als Datenbank Sqlite benutzt(zf3_mirco.db liegt in data) </li>
-	<li>In httpd-vhosts.conf(xampp/apache/conf/extra) den VirtualHost anlegen & in hosts(Windows/System32/drivers/etc) Datei host anlegen </li>
-	<li>Neues Modul anlegen: </li>
-		<ol type="a">
-			<li>Modul Ordner kopieren z.b. Book </li>
-			<li>Modul Ordner umbenennen in Register bzw. Dokumentation bzw. Galerie </li>
-			<li>Ordner systematisch durchgehen und Dateien/Ordner die den alten Namen enthalten entsprechend umbenennen </li>
-			<li>in der Composer.json in autoload das Modul registrieren </li>
-			<li> C:\devhost\zf3_mirco\config\modules.config.php => Modul registrieren => composer dump-autoload durchführen</li>
-			<li> In den einzelnen Dateien alle vorhandenen "Namen" des Moduls durch den neuen Namen ersetzen also aus Book => Register(beachte Groß/kleinschreibung) heißt {Galerie}Controller.php, {Galerie}Form.php und beide Model php Dateien
-			<li>in der Module.php wird die Constante definiert die in der module.config.php des neuen Moduls im "translator" Schlüssel benutzt wird </li>
-			<li>die Ordnerstruktur ist unter src => Controller => steuert View und Modell </li>
-			<li>Form => Formular falls man eines braucht </li>
-			<li>Model => {Book}.php => Hauptsächlich Filter für Inhalte zum Formular </li>
-			<li>Model => {Book}Table.php => anzeigen(get) und speichern(set) der Inhalte des Formulars von/in die DB </li>
-			<li>Controller => {Book}Controller.php => einzelnen Actions wie index|add|edit|deleteAction </li>
-			<li>view -> book -> book -> liegen die .phtml Dateien die anzeigen was gerade ausgeführt wird(add,edit,delete,index) </li>
-		</ol>
-	<li>Sprache hinzufügen: </li>
-		<ol>
-			<li>language Ordner für jedes Modul hinzufügen(direkt im Modul Ordner) </li>
-			<li> </li>
-			<li> </li>
-			<li> </li>
-			<li> </li>
-		</ol>
-</ol>
+	  Please select which config file you wish to inject 'Zend\Hydrator' into:<br>
+	  [0] Do not inject<br>
+	  [1] config/modules.config.php<br>
+	  [2] config/development.config.php.dist<br>
+	  Make your selection (default is 0):1<br>
+	  Remember this option for other packages of the same type? (y/N)y<br></pre>
+	</p>
+	<h3>
+		Album, Book und Hallo Modul sind vorhanden. 
+		Angelegt werden sollen: Registrierung, Galerie und Dokumentation
+	</h3>
+	<ol>
+		<li>Als Datenbank Sqlite benutzt(zf3_mirco.db liegt in data) </li>
+		<li>In httpd-vhosts.conf(xampp/apache/conf/extra) den VirtualHost anlegen & in hosts(Windows/System32/drivers/etc) Datei host anlegen </li>
+		<li><h4>Neues Modul anlegen:</h4> </li>
+			<ol type="a">
+				<li>Modul Ordner kopieren z.b. Book </li>
+				<li>Modul Ordner umbenennen in Register bzw. Dokumentation bzw. Galerie </li>
+				<li>Ordner systematisch durchgehen und Dateien/Ordner die den alten Namen enthalten entsprechend umbenennen </li>
+				<li>in der Composer.json in autoload das Modul registrieren </li>
+				<li> C:\devhost\zf3_mirco\config\modules.config.php => Modul registrieren => composer dump-autoload durchführen</li>
+				<li> In den einzelnen Dateien alle vorhandenen "Namen" des Moduls durch den neuen Namen ersetzen also aus Book => Register(beachte Groß/kleinschreibung) heißt {Galerie}Controller.php, {Galerie}Form.php und beide Model php Dateien
+				<li>in der Module.php wird die Constante definiert die in der module.config.php des neuen Moduls im "translator" Schlüssel benutzt wird </li>
+				<li>die Ordnerstruktur ist unter src => Controller => steuert View und Modell </li>
+				<li>Form => Formular falls man eines braucht </li>
+				<li>Model => {Book}.php => Hauptsächlich Filter für Inhalte zum Formular </li>
+				<li>Model => {Book}Table.php => anzeigen(get) und speichern(set) der Inhalte des Formulars von/in die DB </li>
+				<li>Controller => {Book}Controller.php => einzelnen Actions wie index|add|edit|deleteAction </li>
+				<li>view -> book -> book -> liegen die .phtml Dateien die anzeigen was gerade ausgeführt wird(add,edit,delete,index) </li>
+			</ol>
+		<li><h4>Sprache hinzufügen:</h4> </li>
+			<ol>
+				<li>Sprachmodul zend-mvc-i18n per composer installieren mit cmd Befehl: <pre>composer require zendframework/zend-mvc-i18n </pre></li>
+				<li>language Ordner für jedes Modul hinzufügen(direkt im Modul Ordner) auch Application </li>
+				<li>Falls nicht vorhanden den I18n Ordner unter: </li>
+				<li>"Projekt/Module/Application/src" hinzufügen mit den beiden Dateien <code>I18nListener.php & I18nListenerFactory.php </code> </li>
+				<li>Sprachdateien anlegen 		
+					<pre>C:\devhost\zf3_mirco\module\Album\language\de_DE.php</pre>
+					<pre>C:\devhost\zf3_mirco\module\Book\language\de_DE.php</pre>
+					<pre>C:\devhost\zf3_mirco\module\Hallo\language\de_DE.php</pre>
+					<pre>C:\devhost\zf3_mirco\module\Application\language\de_DE.php</pre>
+					Weitere Module ebenso...
+				</li>
+				<li><code>C:\devhost\zf3_mirco\module\Application\config\module.config.php </code>
+				und in allen anderen Modulen "{Modul}/module.config" Dateien folgendes einfügen:
+				<pre>
+				'constraints' => [
+					'lang' => '(de|en)',
+					],
+				</pre>
+				<pre>
+				'translator' => [
+				'translation_file_patterns' => [
+				[
+					'type'     => 'phparray',
+					'base_dir' => APPLICATION_MODULE_ROOT . '/language', //Constante in MODULE.php 	definieren
+					'pattern'  => '%s.php',
+				],
+					],
+						],
+				</pre>
+				</li>
+				<li>Nur in Application module.config einfügen als extra Schlüssel nicht in router:
+					<pre>use Application\I18n\I18nListener;</pre>
+					<pre>use Application\I18n\I18nListenerFactory;</pre>
+				<pre>
+				'i18n' => [
+				'defaultLang'    => 'de',
+				'allowedLocales' => [
+						'de' => 'de_DE',
+						'en' => 'en_US',
+						'fr' => 'fr_FR',//Sprache
+					],
+					
+					'defaultRoute'   => 'home',
+				],
+					
+				'service_manager' => [
+				'factories' => [
+				I18nListener::class => I18nListenerFactory::class,
+				TranslatorInterface::class => TranslatorServiceFactory::class,
+				],
+					],
+					</pre>
+					</li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ol>
+	</ol>
 
 <!--Navigation Teil aus module.config.php der Appli in die module.config.php des Moduls packen. 
 und=>
 use Zend\Navigation\Page\Mvc;
 use Zend\Mvc\I18n\Router;
 hinzufügen...
+
+/* Navigation des jeweiligen Moduls in der module.config.php
+	* der Schlüssel 'pages' ist wichtig für Breadcrump da dieser Pfad sonst nicht angezeigt wird
+	*/
+'navigation'    => [
+        'default' => [
+            'register' => [
+                'type'          => Mvc::class,
+                'order'         => '300',
+                'label'         => 'Register',
+                'route'         => 'register',
+                'controller'    => Controller\RegisterController::class,
+                'action'        => 'index',
+                'useRouteMatch' => true,
+                'pages'         => [
+                    
+					[
+                        'label'  => 'Add',
+                        'route'  => 'register',
+                        'action' => 'add',
+						'useRouteMatch' => true,
+                    ],
+					[
+                        'label'  => 'Edit',
+                        'route'  => 'register',
+                        'action' => 'edit',
+						'useRouteMatch' => true,
+                    ],
+                    [
+                        'label'  => 'Delete',
+                        'route'  => 'register',
+                        'action' => 'delete',
+						'useRouteMatch' => true,
+                    ],
+                ], 
+            ], 
+        ],
+    ],
+
+
+
+
 #### bei allen .phtml Dateien die this-url() enthalten den dritten Parameter auf "true" setzen
 < ?= $this->url($this->route, [], ['query' => ['page' => $this->next]], true) ?>
  -->

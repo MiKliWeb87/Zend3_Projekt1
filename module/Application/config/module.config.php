@@ -69,13 +69,8 @@ return [
                     'defaults' => [
                         'controller' => Controller\IndexController::class,
                         'action'     => 'index',
-						#'lang'		 => 'de',
                     ],
                 ],
-				
-				/*'constraints' => [
-                        'lang' => '(de|en)',
-                    ],*/
             ],
         ],
     ],

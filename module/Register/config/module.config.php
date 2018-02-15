@@ -38,6 +38,9 @@ return [
         ],
     ],
 	
+	/* Navigation des jeweiligen Moduls in der module.config.php
+	* der Schlüssel 'pages' ist wichtig für Breadcrump da dieser Pfad sonst nicht angezeigt wird
+	*/
 	'navigation'    => [
         'default' => [
             'register' => [

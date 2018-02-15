@@ -78,7 +78,9 @@ return [
             ],
         ],
     ],
-	
+	/* Navigation des jeweiligen Moduls in der module.config.php
+	* der Schlüssel 'pages' ist wichtig für Breadcrump da dieser Pfad sonst nicht angezeigt wird
+	*/
 	'navigation'    => [
         'default' => [
             'book' => [
@@ -89,7 +91,7 @@ return [
                 'controller'    => Controller\BookController::class,
                 'action'        => 'index',
                 'useRouteMatch' => true,
-                'pages'         => [
+                'pages'         => [ 
                     
 					[
                         'label'  => 'Add',
@@ -109,7 +111,8 @@ return [
                         'action' => 'delete',
 						'useRouteMatch' => true,
                     ],
-					/*'add' => [
+					/* eventuell für 2. menüs wichtig
+					'add' => [
                         'type'    => Mvc::class,
                         'route'   => 'book/add',
                         #'visible' => false,

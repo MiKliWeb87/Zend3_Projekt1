@@ -31,7 +31,7 @@ $submit = $form->get('submit');
 $submit->setAttribute('class', 'btn btn-primary');
 
 
-$form->setAttribute('action', $this->url('register', ['action' => $this->translate('add')]));
+$form->setAttribute('action', $this->url('register', ['action' => $this->translate('add')], true));
 $form->prepare();
 
 echo $this->form()->openTag($form);

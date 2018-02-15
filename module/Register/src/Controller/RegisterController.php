@@ -48,7 +48,8 @@ class RegisterController extends AbstractActionController
 
         $request = $this->getRequest();
 
-        if (! $request->isPost()) {
+        if (! $request->isPost()) 
+		{
             return ['form' => $form];
         }
 
@@ -56,13 +57,14 @@ class RegisterController extends AbstractActionController
         $form->setInputFilter($register->getInputFilter());
         $form->setData($request->getPost());
 
-        if (! $form->isValid()) {
+        if (! $form->isValid()) 
+		{
             return ['form' => $form];
         }
 
         $register->exchangeArray($form->getData());
         $this->table->saveRegister($register);
-        return $this->redirect()->toRoute('register');
+        return $this->redirect()->toRoute('register',['action' => 'index'], true);
     }
 
 
@@ -71,20 +73,20 @@ class RegisterController extends AbstractActionController
     {
         $id = (int) $this->params()->fromRoute('id', 0);
 
-        if (0 === $id) {
-            return $this->redirect()->toRoute('register', ['action' => 'add']);
+        if (0 === $id) 
+		{
+            return $this->redirect()->toRoute('register', ['action' => 'add'], true);
         }
 
-        // Retrieve the register with the specified id. Doing so raises
-        // an exception if the register is not found, which should result
-        // in redirecting to the landing page.
+        /* Retrieve the register with the specified id. Doing so raises an exception if the register is not found, which should result
+         in redirecting to the landing page.*/
         try 
 		{
             $register = $this->table->getRegister($id);
         } 
 		catch (\Exception $e) 
 		{
-            return $this->redirect()->toRoute('register', ['action' => 'index']);
+            return $this->redirect()->toRoute('register', ['action' => 'index'], true);
         }
 
         $form = new RegisterForm();
@@ -109,28 +111,35 @@ class RegisterController extends AbstractActionController
 
         $this->table->saveRegister($register);
 
-        // Redirect to register list
-        return $this->redirect()->toRoute('register', ['action' => 'index']);
+        // Redirect to register list, set 3rd parameter to true for multilang
+        return $this->redirect()->toRoute('register', ['action' => 'index'], true);
     }
-
+	
+	/**
+	* löscht einen User eintrag
+	*/
+	
     public function deleteAction()
     {
         $id = (int) $this->params()->fromRoute('id', 0);
-        if (!$id) {
-            return $this->redirect()->toRoute('register');
+        if (!$id) 
+		{
+            return $this->redirect()->toRoute('register', ['action' => 'index'], true);
         }
 
         $request = $this->getRequest();
-        if ($request->isPost()) {
+        if ($request->isPost()) 
+		{
             $del = $request->getPost('del', 'No');
 
-            if ($del == 'Yes') {
+            if ($del == 'Yes') 
+			{
                 $id = (int) $request->getPost('id');
                 $this->table->deleteRegister($id);
             }
 
             // Redirect to list of registers
-            return $this->redirect()->toRoute('register');
+            return $this->redirect()->toRoute('register', ['action' => 'index'], true);
         }
 
         return [
