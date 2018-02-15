@@ -102,27 +102,80 @@
 				],
 					],
 					</pre>
-					</li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-			</ol>
-	</ol>
+				</li>
+				<li>
+			In <code>	C:\devhost\zf3_mirco\module\Book\src\Module.php</code>
+Einfügen
+<pre>
+/**
+     * Initialize module //für Translator
+     *
+     * @param ModuleManagerInterface $manager
+     */
+    public function init(ModuleManagerInterface $manager)
+    {
+        define('BOOK_MODULE_ROOT', __DIR__ . '/..');
+    }
+	</pre>
+				</li>
+				<li>
+				<code>C:\devhost\zf3buch.zendframework-center\module\Application\src\Module.php</code>
+				einmalig einfügen in der Module.php der Application
+<pre>
+	/**
+     * @param EventInterface|MvcEvent $e
+     */
+    public function onBootstrap(EventInterface $e)
+    {
+        // get services
+        $serviceManager = $e->getApplication()->getServiceManager();
 
-<!--Navigation Teil aus module.config.php der Appli in die module.config.php des Moduls packen. 
-und=>
-use Zend\Navigation\Page\Mvc;
-use Zend\Mvc\I18n\Router;
-hinzufügen...
+        // add listeners
+        $eventManager = $e->getApplication()->getEventManager();
 
-/* Navigation des jeweiligen Moduls in der module.config.php
-	* der Schlüssel 'pages' ist wichtig für Breadcrump da dieser Pfad sonst nicht angezeigt wird
-	*/
+        #$layoutListener = new LayoutListener(['header', 'footer']);
+        #$layoutListener->attach($eventManager);
+
+        /** @var I18nListener $i18nListener */
+        $i18nListener = $serviceManager->get(I18nListener::class);
+        $i18nListener->attach($eventManager);
+    } </pre>
+				</li>
+				<li>In der Datei 
+		<pre>
+				<pre>C:\devhost\zf3buch.zendframework-center\module\Application\view\layout\header.phtml einfügen</pre>
+		&ltul class="nav navbar-nav navbar-right"&gt
+			&ltli&gt
+			  &lta href="&lt?= $this-&gturl(null, ['lang' =&gt 'de'], true) ?&gt"&gt
+				&lt?= $this-&gttranslate('application_navigation_german'); ?&gt
+			  &lt/a&gt
+			&lt/li&gt
+			&ltli&gt
+			  &lta href="&lt?= $this-&gturl(null, ['lang' =&gt 'en'], true) ?&gt"&gt
+				&lt?= $this-&gttranslate('application_navigation_english'); ?&gt
+			  &lt/a&gt
+			&lt/li&gt
+			&ltli&gt
+			  &lta href="&lt?= $this-&gturl(null, ['lang' =&gt 'fr'], true) ?&gt"&gt
+				&lt?= $this-&gttranslate('application_navigation_french'); //neue Sprache?&gt
+			  &lt/a&gt
+			&lt/li&gt
+		&lt/ul&gt
+		</pre>
+				</li>
+				<li>
+				Navigation Teil aus <code> module.config.php der Appli in die module.config.php des Moduls</code> packen. 
+				und=>
+				<pre>use Zend\Navigation\Page\Mvc;</pre>
+				<pre>use Zend\Mvc\I18n\Router;</pre>
+				hinzufügen...
+				</li>
+				<li>
+				/* Navigation des jeweiligen Moduls in der module.config.php<br>
+				* der Schlüssel 'pages' ist wichtig für Breadcrump da dieser Pfad sonst nicht angezeigt wird
+				*/
+				<pre>
+	
 'navigation'    => [
         'default' => [
             'register' => [
@@ -157,12 +210,17 @@ hinzufügen...
             ], 
         ],
     ],
+	</pre>
+				</li>
+				<li>bei allen .phtml Dateien die this->url() enthalten den dritten Parameter auf "true" setzen
+				<pre><?= $this->url($this->route, [], ['query' => ['page' => $this->next]], true) ?> </pre>
+				</li>
+			</ol>
+	</ol>
 
+<!--
+#### 
 
-
-
-#### bei allen .phtml Dateien die this-url() enthalten den dritten Parameter auf "true" setzen
-< ?= $this->url($this->route, [], ['query' => ['page' => $this->next]], true) ?>
  -->
 
 
