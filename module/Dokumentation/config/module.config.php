@@ -6,6 +6,8 @@ namespace Dokumentation;
 
 use Zend\Router\Http\Segment;
 use Zend\ServiceManager\Factory\InvokableFactory;
+use Zend\Navigation\Page\Mvc;
+use Zend\Mvc\I18n\Router;
 
 
 return [
@@ -24,6 +26,7 @@ return [
                         'lang' => '(de|en)',
                     ],
                 ],
+			'may_terminate' => true,
             ],
 		],
 	],
@@ -32,6 +35,42 @@ return [
             Controller\DokumentationController::class => InvokableFactory::class,
         ],
     ],
+	
+	'navigation'    => [
+        'default' => [
+            'dokumentation' => [
+                'type'          => Mvc::class,
+                'order'         => '700',
+                'label'         => 'Dokumentation',
+                'route'         => 'dokumentation',
+                'controller'    => Controller\DokumentationController::class,
+                'action'        => 'index',
+                'useRouteMatch' => true,
+            /*    'pages'         => [
+                    
+					[
+                        'label'  => 'Add',
+                        'route'  => 'dokumentation',
+                        'action' => 'add',
+						'useRouteMatch' => true,
+                    ],
+					[
+                        'label'  => 'Edit',
+                        'route'  => 'dokumentation',
+                        'action' => 'edit',
+						'useRouteMatch' => true,
+                    ],
+                    [
+                        'label'  => 'Delete',
+                        'route'  => 'dokumentation',
+                        'action' => 'delete',
+						'useRouteMatch' => true,
+                    ],
+                ], */
+            ], 
+        ],
+    ],
+	
 	//Für Sprache
 	'translator' => [
         'translation_file_patterns' => [

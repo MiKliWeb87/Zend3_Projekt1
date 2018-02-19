@@ -213,9 +213,20 @@ Einfügen
 	</pre>
 				</li>
 				<li>bei allen .phtml Dateien die this->url() enthalten den dritten Parameter auf "true" setzen
-				<pre><?= $this->url($this->route, [], ['query' => ['page' => $this->next]], true) ?> </pre>
+				<pre><?= $this->url('register', ['action' => 'add'],true) ?> </pre>
 				</li>
+				<li>
+				Begriffe die übersetzt werden sollen, werden nun mit 
+	<pre><?= $this->translate('application_user_firstname')?> </pre>
+	innerhalb von HTML Code oder
+	<pre>$this->translate('Add_new_register');</pre>
+	innerhalb von php Code(halt ohne php Tag bzw. ohne echo)
+	übersetzt. Die Übersetzung dafür wird im language Ordner in die entsprechende Sprach.php Datei geschrieben(möglichst jedes Modul für sich).<br>
+	Übersetzungen außerhalb von phtlm Dateien brauchen kein <code> $this->translate() </code> sondern kann z.b. das label direkt in die Sprachdatei geschrieben werden(z.b. in {Register}Form.php)
+				</li>
+				
 			</ol>
+		<li>DB anlegen: </li>
 	</ol>
 
 <!--

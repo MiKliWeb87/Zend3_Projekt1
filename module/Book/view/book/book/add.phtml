@@ -1,7 +1,7 @@
 <?php
 // module/Book/view/book/book/add.phtml:
 
-$title = 'Add new book';
+$title = $this->translate('Add new book');
 $this->headTitle($title);
 ?>
 <h1><?= $this->escapeHtml($title) ?></h1>
@@ -9,7 +9,7 @@ $this->headTitle($title);
 // This provides a default CSS class and placeholder text for the title element:
 $book = $form->get('title');
 $book->setAttribute('class', 'form-control');
-$book->setAttribute('placeholder', 'Book title');
+$book->setAttribute('placeholder', $this->translate('Book title'));
 
 // This provides a default CSS class and placeholder text for the autor element:
 $autor = $form->get('autor');

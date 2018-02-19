@@ -31,6 +31,11 @@ return [
 	'application_book_new'							=> 'Add new book',
 	'application_book_edit'							=> 'Edit',
 	'application_book_delete'						=> 'Delete',
+	
+	'Autor'											=> 'Author',
+	'Land'											=> 'Country',
+	
+	'Are you sure that you want to delete_book'		=> 'Are you sure that you want to delete',
 
     // message texts
     'application_message_footer_skeleton'           => 'The demo project is based on the extended <strong>MVC Skeleton Application</strong>, which is published with the ZF3 book, to enable you the start Zend Framework 3 applications faster. This demo project is only an example, all the job and project opportunities do <strong>not</strong> really exist.',

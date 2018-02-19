@@ -6,6 +6,8 @@ namespace Hallo;
 
 use Zend\Router\Http\Segment;
 use Zend\ServiceManager\Factory\InvokableFactory;
+use Zend\Navigation\Page\Mvc;
+use Zend\Mvc\I18n\Router;
 
 
 return [
@@ -21,7 +23,7 @@ return [
 						'lang'       => 'de',
                     ],
 					'constraints' => [
-                        'lang' => '(de|en|fr)',
+                        'lang' => '(de|en)', //Hier kann Sprache dazukommen
                     ],
                 ],
             ],
@@ -32,6 +34,21 @@ return [
             Controller\HalloController::class => InvokableFactory::class,
         ],
     ],
+	
+	'navigation'    => [
+        'default' => [
+            'hallo' => [
+                'type'          => Mvc::class,
+                'order'         => '200',
+                'label'         => 'Hallo',
+                'route'         => 'hallo',
+                'controller'    => Controller\HalloController::class,
+                'action'        => 'index',
+                'useRouteMatch' => true,
+            ], 
+        ],
+    ],
+	
 	//Für Sprache
 	'translator' => [
         'translation_file_patterns' => [

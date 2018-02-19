@@ -23,6 +23,17 @@ return [
 	'application_album_edit'						=> 'Editieren',
 	'application_album_delete'						=> 'Löschen',
 
+	//Buttons
+	'Add'											=> 'Hinzufügen',
+	'Edit'											=> 'Editieren',
+	'Delete'										=> 'Löschen',
+	
+	'Add new album'									=> 'Neues Album hinzufügen',
+	'Edit album'									=> 'Album editieren',
+	'Delete album'									=> 'Album löschen',
+	//Platzhalter
+	'Album title'									=> 'Album Titel',
+	
     // heading texts
     'application_h1_index_index'                    => 'Willkommen zum Zend Framework Center!',
     'application_h1_error_404'                      => 'Seite nicht gefunden',

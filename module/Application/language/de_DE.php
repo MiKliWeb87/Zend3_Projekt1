@@ -29,10 +29,7 @@ return [
     'application_h4_footer_links1'                  => 'Zend Framework Links',
     'application_h4_footer_links2'                  => 'ZF3buch Links',
 	
-	#'application_book'								=> 'Neues Buch hinzufügen',
-	
-	#'application_book_edit'							=> 'Editieren',
-	
+	'Home'											=> 'Startseite',
 
 
     // message texts
@@ -44,21 +41,6 @@ return [
     'application_message_controller_other'          => 'Zu diesem Zeitpunkt ist es uns nicht möglich zu bestimmen, warum ein 404 Fehler aufgetreten ist.',
     'application_message_try_later'                 => 'Bitte versuchen Sie es später noch einmal.',
 
-    /* label texts
-    'application_label_zfwebsite'                   => 'Zend Framework Website',
-    'application_label_zfmodules'                   => 'Zend Framework 3 Module',
-    'application_label_zfgithub'                    => 'Zend Framework Github',
-    'application_label_zf3buch'                     => 'Website zum ZF3 Buch',
-    'application_label_zf3buch_skeleton'            => 'GitHub Repository Zend Framework Center',
-    'application_label_ralfeggert'                  => 'Homepage Ralf Eggert',
-
-    // action texts
-    'application_action_homepage'                   => 'Zurück zur Startseite',
-
-    //  miscellaneous texts
-    'application_misc_toggle_navigation'            => 'Navigation umschalten',
-    'application_misc_slogan'                       => 'Zend Framework Center',
-    'application_misc_reason'                       => 'Grund',
-    'application_misc_coming_soon'                  => 'In Kürze mehr', */
+    
 
 ];

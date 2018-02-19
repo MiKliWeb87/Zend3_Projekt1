@@ -12,9 +12,8 @@ use Zend\Router\Http\Segment;
 use Zend\ServiceManager\Factory\InvokableFactory;
 use Application\I18n\I18nListener;
 use Application\I18n\I18nListenerFactory;
-use Album\Controller\AlbumController;
-use Book\Controller\BookController;
-use Register\Controller\RegisterController;
+use Zend\Navigation\Page\Mvc;
+use Zend\Mvc\I18n\Router;
 
 return [
     'router' => [
@@ -33,45 +32,22 @@ return [
                     ],
                 ],
             ],
-			
-/*			'album' => [
-                'type' => Segment::class,
-                'options' => [
-                    'route'    => '/:lang/album',
-                    'defaults' => [
-                        'controller' => Controller\AlbumController::class,
-                        'action'     => 'index',
-						'lang'		 => 'de',
-                    ],
-                ],
-            ],
-			//eingefügt für neues Modul
-			'books' => [
-                'type' => Segment::class,
-                'options' => [
-                    'route'    => '/:lang/book',
-                    'defaults' => [
-                        'controller' => Controller\BookController::class,
-                        'action'     => 'index',
-						'lang'		 => 'de',
-                    ],
-                ],
 				
-				'constraints' => [
-                        'lang' => '(de|en)',
-                    ],
-            ], */
-			
-            'application' => [
+        /*    'application' => [
                 'type'    => Segment::class,
                 'options' => [
                     'route'    => '/:lang/application[/:action]',
                     'defaults' => [
                         'controller' => Controller\IndexController::class,
                         'action'     => 'index',
+						'lang' 		=> 'de',
+                    ],
+					
+					'constraints' => [
+                        'lang' => '(de|en)',
                     ],
                 ],
-            ],
+            ], */
         ],
     ],
 	
@@ -104,110 +80,9 @@ return [
                 'label' => 'Home',
                 'route' => 'home',
 				'useRouteMatch' => true,
-            ],
-            [
-                'label' => 'Album',
-                'route' => 'album',
-				#'useRouteMatch' => true,
-                'pages' => [
-                    [
-                        'label'  => 'Add',
-                        'route'  => 'album',
-                        'action' => 'add',
-						'useRouteMatch' => true,
-                    ],
-                    [
-                        'label'  => 'Edit',
-                        'route'  => 'album',
-                        'action' => 'edit',
-						'useRouteMatch' => true,
-                    ],
-                    [
-                        'label'  => 'Delete',
-                        'route'  => 'album',
-                        'action' => 'delete',
-						'useRouteMatch' => true,
-                    ],
-                ],
-            ],
-			
-		/*	[
-                'label' => 'Book',
-                'route' => 'book',
-				#'useRouteMatch' => true,
-                'pages' => [
-                    [
-                        'label'  => 'Add',
-                        'route'  => 'book',
-                        'action' => 'add',
-						'useRouteMatch' => true,
-                    ],
-                    [
-                        'label'  => 'Edit',
-                        'route'  => 'book',
-                        'action' => 'edit',
-						'useRouteMatch' => true,
-                    ],
-                    [
-                        'label'  => 'Delete',
-                        'route'  => 'book',
-                        'action' => 'delete',
-						'useRouteMatch' => true,
-                    ],
-                ],
-            ],*/
-			
-			[
-                'label' => 'Hallo',
-                'route' => 'hallo',
-				'useRouteMatch' => true,
-                
-            ],
-			
-			[
-                'label' => 'Galerie',
-                'route' => 'galerie',
-				'useRouteMatch' => true,
-                
-            ],
-			
-		/*	[
-                'label' => 'Register',
-                'route' => 'register',
-				#'useRouteMatch' => true,
-					'pages' => [
-                    [
-                        'label'  => 'Add',
-                        'route'  => 'register',
-						'useRouteMatch' => true,
-                        'action' => 'add',
-						
-                    ],
-                    [
-                        'label'  => 'Edit',
-                        'route'  => 'register',
-                        'action' => 'edit',
-						'useRouteMatch' => true,
-                    ],
-                    [
-                        'label'  => 'Delete',
-                        'route'  => 'register',
-                        'action' => 'delete',
-						'useRouteMatch' => true,
-                    ],
-                ],
-                
-            ], */
-			
-			[
-                'label' => 'Dokumentation',
-                'route' => 'dokumentation',
-				'useRouteMatch' => true,
-                
-            ],
-			
+            ],	
         ],
-    ],
+    ], 
 	//Für Sprache
 	'translator' => [
         'translation_file_patterns' => [

@@ -11,7 +11,7 @@ $this->headTitle($title);
 
 <table class="table">
 <tr>
-    <th>Title</th>
+    <th><?= $this->translate('Title')?></th>
     <th>Autor</th>
 	<th>Land</th> <!--Land eingefügt -->
     <th>&nbsp;</th>
@@ -21,7 +21,7 @@ $this->headTitle($title);
         <td><?= $this->escapeHtml($book->title) ?></td>
         <td><?= $this->escapeHtml($book->autor) ?></td>
 		<td><?= $this->escapeHtml($book->land) ?></td>
-        <td>
+        <td><!--Verlinkungen auf index Seite -->
             <a href="<?= $this->url('book', ['action' => 'edit', 'id' => $book->id], true) ?>"><?= $this->translate('application_book_edit') ?></a>
             <a href="<?= $this->url('book', ['action' => 'delete', 'id' => $book->id], true) ?>"><?= $this->translate('application_book_delete')?></a>
         </td>

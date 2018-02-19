@@ -31,7 +31,21 @@ return [
 	'application_book_new'							=> 'Neues Buch hinzufügen',
 	'application_book_edit'							=> 'Editieren',
 	'application_book_delete'						=> 'Löschen',
-
+	
+	'Book'											=> 'Bücher',
+	//Buttons
+	'Add'											=> 'Hinzufügen',
+	'Edit'											=> 'Editieren',
+	'Delete'										=> 'Löschen',
+	//Feldüberschriften/Platzhalter
+	'Title'											=> 'Titel',
+	'Book title'									=> 'Buchtitel',
+	'Edit book'										=> 'Buch editieren',
+	'Delete book'									=> 'Buch löschen',
+	//Links
+	'Add new book'									=> 'Neues Buch hinzufügen',
+	
+	'Are you sure that you want to delete_book'			=> 'Sind Sie sicher das sie folgendes Buch löschen wollen?',
     // message texts
     'application_message_footer_skeleton'           => 'Dieses Demoprojekt basiert auf der erweiterten <strong>MVC Skeleton Application</strong>, die das ZF3 Buch bereit stellt, damit Sie schnell eigene Zend Framework 3 Anwendungen erstellen können. Dieses Demoprojekt dient nur als Beispiel, die Jobs und Projekte sowie die Unternehmen sind rein <strong>fiktiv</strong>',
     'application_message_controller_not_dispatched' => 'Der angeforderte Controller war nicht in der Lage die Anfrage zu verarbeiten.',

@@ -2,6 +2,8 @@
 namespace Album;
 
 use Zend\Router\Http\Segment;
+use Zend\Navigation\Page\Mvc;
+use Zend\Mvc\I18n\Router;
 // Remove this:
 #use Zend\ServiceManager\Factory\InvokableFactory;
 
@@ -36,6 +38,43 @@ return [
             ],
         ],
     ],
+	
+	'navigation'    => [
+        'default' => [
+            'album' => [
+                'type'          => Mvc::class,
+                'order'         => '300',
+                'label'         => 'Album',
+                'route'         => 'album',
+                'controller'    => Controller\AlbumController::class,
+                'action'        => 'index',
+                'useRouteMatch' => true,
+                'pages'         => [
+                    
+					[
+                        'label'  => 'Add',
+                        'route'  => 'album',
+                        'action' => 'add',
+						'useRouteMatch' => true,
+                    ],
+					[
+                        'label'  => 'Edit',
+                        'route'  => 'album',
+                        'action' => 'edit',
+						'useRouteMatch' => true,
+                    ],
+                    [
+                        'label'  => 'Delete',
+                        'route'  => 'album',
+                        'action' => 'delete',
+						'useRouteMatch' => true,
+                    ],
+                ], 
+            ], 
+        ],
+    ],
+	
+	
 	//Für Sprache
 	'translator' => [
         'translation_file_patterns' => [

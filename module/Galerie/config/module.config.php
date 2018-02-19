@@ -2,6 +2,8 @@
 namespace Galerie;
 
 use Zend\Router\Http\Segment;
+use Zend\Navigation\Page\Mvc;
+use Zend\Mvc\I18n\Router;
 // Remove this:
 #use Zend\ServiceManager\Factory\InvokableFactory;
 
@@ -35,7 +37,21 @@ return [
             ],
         ],
     ],
-
+	
+	'navigation'    => [
+        'default' => [
+            'galerie' => [
+                'type'          => Mvc::class,
+                'order'         => '400',
+                'label'         => 'Galerie',
+                'route'         => 'galerie',
+                'controller'    => Controller\GalerieController::class,
+                'action'        => 'index',
+                'useRouteMatch' => true,
+            ], 
+        ],
+    ],
+	
     'view_manager' => [
         'template_path_stack' => [
             'galerie' => __DIR__ . '/../view',

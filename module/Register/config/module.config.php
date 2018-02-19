@@ -45,7 +45,7 @@ return [
         'default' => [
             'register' => [
                 'type'          => Mvc::class,
-                'order'         => '300',
+                'order'         => '600',
                 'label'         => 'Register',
                 'route'         => 'register',
                 'controller'    => Controller\RegisterController::class,
@@ -71,21 +71,6 @@ return [
                         'action' => 'delete',
 						'useRouteMatch' => true,
                     ],
-					/*'add' => [
-                        'type'    => Mvc::class,
-                        'route'   => 'register/add',
-                        #'visible' => false,
-                    ],
-                    'edit' => [
-                        'type'    => Mvc::class,
-                        'route'   => 'register/edit',
-                        #'visible' => false,
-                    ],
-                    'delete' => [
-                        'type'    => Mvc::class,
-                        'route'   => 'register/delete',
-                        #'visible' => false,
-                    ],*/
                 ], 
             ], 
         ],

@@ -93,7 +93,7 @@ class BookController extends AbstractActionController
 
         $form = new BookForm();
         $form->bind($book);
-        $form->get('submit')->setAttribute('value', 'Edit');
+        $form->get('submit')->setAttribute('value', 'Edit'); //Button Übersetzung für Edit in language
 
         $request = $this->getRequest();
         $viewData = ['id' => $id, 'form' => $form];

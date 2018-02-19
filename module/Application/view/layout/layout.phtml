@@ -32,7 +32,8 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="<?= $this->url('home') ?>">
+					<!-- href wichtig für Zend Menüpunkt(Sprache) -->
+                    <a class="navbar-brand" href="<?= $this->url('home', ['action' => 'index'], true) ?>">
                         <img src="<?= $this->basePath('img/zf-logo-mark.svg') ?>" height="28" alt="Zend Framework <?= \Application\Module::VERSION ?>"/>&nbsp;Skeleton Application
                     </a>
                 </div>

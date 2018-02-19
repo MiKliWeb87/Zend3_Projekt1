@@ -91,7 +91,7 @@ class RegisterController extends AbstractActionController
 
         $form = new RegisterForm();
         $form->bind($register);
-        $form->get('submit')->setAttribute('value', 'Edit');
+        $form->get('submit')->setAttribute('value', 'Edit');//Buttontext
 
         $request = $this->getRequest();
         $viewData = ['id' => $id, 'form' => $form];

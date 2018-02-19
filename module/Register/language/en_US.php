@@ -31,6 +31,7 @@ return [
 	'application_user_edit'							=> 'Edit',
 	'application_user_delete'						=> 'Delete',
 	
+	'Are you sure that you want to delete_user'     => 'Are you sure that you want to delete',
 	
 	//Tabelle
 	'application_user_firstname'					=> 'Firstname',

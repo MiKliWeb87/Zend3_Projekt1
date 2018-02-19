@@ -18,6 +18,7 @@ return [
     'application_title_default'                     => 'Zend Framework Center',
     'application_title_error_404'                   => 'Page not found',
     'application_title_error_index'                 => 'Server error',
+	'Hallo'											=> 'Hello',
 
     // heading texts
     'application_h1_index_index'                    => 'Welcome to the Zend Framework Center!',

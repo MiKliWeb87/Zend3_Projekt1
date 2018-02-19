@@ -30,12 +30,20 @@ return [
 	'application_user_edit'							=> 'Editieren',
 	'application_user_delete'						=> 'Löschen',
 	
-	//Tabellen
+	'Register'										=> 'Registrierung',
+	
+	//Tabellen bzw. Platzhalter im Formular
 	'application_user_firstname'					=> 'Vorname',
 	'application_user_lastname'						=> 'Nachname',
 	'application_user_password'						=> 'Passwort',
 	'Add_new_register'								=> 'Neuen User hinzufügen',
+	'Delete register'								=> 'User löschen',
+	'Are you sure that you want to delete_user'			=> 'Sind Sie sicher, dass Sie folgenden Nutzer löschen wollen?',
+	//Button
 	'Add'											=> 'Hinzufügen',
+	'Edit'											=> 'Editieren',
+	'Delete'										=> 'Löschen',
+	//Formularüberschriften/Labels
 	'Firstname'										=> 'Vorname',
 	'Lastname'										=> 'Nachname',
 	'Password'										=> 'Passwort',

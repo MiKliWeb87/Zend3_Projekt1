@@ -1,7 +1,7 @@
 <?php
 // module/Register/view/register/register/delete.phtml:
 
-$title = 'Delete register';
+$title = $this->translate('Delete register');
 $url   = $this->url('register', ['action' => 'delete', 'id' => $id], true);
 
 $this->headTitle($title);
@@ -9,8 +9,8 @@ $this->headTitle($title);
 <h1><?= $this->escapeHtml($title) ?></h1>
 
 <p>
-    Are you sure that you want to delete
-    "<?= $this->escapeHtml($register->firstname) ?>" and
+   <?= $this->translate('Are you sure that you want to delete_user')?>
+    "<?= $this->escapeHtml($register->firstname) ?>"
     "<?= $this->escapeHtml($register->lastname) ?>"?
 </p>
 

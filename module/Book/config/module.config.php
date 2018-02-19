@@ -33,8 +33,9 @@ return [
 						'lang'       => 'de',
                     ],
                 ],
-		/*Versuch mit Child Routes 	
-			'may_terminate' => true, //kann auch ohne action aufgerufen werden
+		 	
+			'may_terminate' => true, //kann auch ohne action aufgerufen werden 
+			/*Versuch mit Child Routes
                 'child_routes'  => [
                     'add' => [
                         'type'    => Segment::class,
@@ -85,7 +86,7 @@ return [
         'default' => [
             'book' => [
                 'type'          => Mvc::class,
-                'order'         => '200',
+                'order'         => '300',
                 'label'         => 'Book',
                 'route'         => 'book',
                 'controller'    => Controller\BookController::class,
