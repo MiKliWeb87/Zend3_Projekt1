@@ -28,6 +28,8 @@ return [
 	'Edit'											=> 'Editieren',
 	'Delete'										=> 'Löschen',
 	
+	
+	'Are you sure that you want to delete_album'	=> 'Sind Sie sicher das sie folgendes Album löschen wollen?',
 	'Add new album'									=> 'Neues Album hinzufügen',
 	'Edit album'									=> 'Album editieren',
 	'Delete album'									=> 'Album löschen',

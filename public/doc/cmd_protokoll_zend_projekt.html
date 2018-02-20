@@ -223,10 +223,19 @@ Einfügen
 	innerhalb von php Code(halt ohne php Tag bzw. ohne echo)
 	übersetzt. Die Übersetzung dafür wird im language Ordner in die entsprechende Sprach.php Datei geschrieben(möglichst jedes Modul für sich).<br>
 	Übersetzungen außerhalb von phtlm Dateien brauchen kein <code> $this->translate() </code> sondern kann z.b. das label direkt in die Sprachdatei geschrieben werden(z.b. in {Register}Form.php)
-				</li>
-				
+				</li>	
 			</ol>
-		<li>DB anlegen: </li>
+		<li><h4>DB anlegen:</h4> </li>
+		<ol>
+		<li><h5>MySql Datenbank: </h5></li>
+		Schema anlegen mit Create Database etc. wichtig für MySql AUTO_INCREMENT benutzen, als "{schema}.sql" abspeichern.
+		Mit <code> C:\devhost\ZendProjekt>c:\xampp\mysql\bin\mysql.exe -u root < data\db\{mysql}.sql</code> wird die SQL Datei in die MySQL DB gespielt. Vorrangig kann dies auch in phpMyAdmin direkt gemacht werden. Die MySQL DB ist dann unter phpMyAdmin abgelegt und ist nicht so mobil wie die von Sqlite.  
+		
+		<li><h5>SQLite Datenbank: </h5></li>
+		Schema anlegen mit Create Database etc. wichtig für Sqlite AUTOINCREMENT benutzen, als "{schema}.sql" abspeichern
+		Mit <code> C:\devhost\ZendProjekt>..\sqlite3 data/zftutorial.db < data/sqlite.sql </code> wird die SQL Schema Datei in die Datenbank eingespielt. Die Sqlite DB liegt dann mit im data Ordner. 	
+		<li> </li>
+		</ol>
 	</ol>
 
 <!--
